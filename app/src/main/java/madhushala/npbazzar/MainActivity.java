@@ -65,9 +65,9 @@ public class MainActivity extends AppCompatActivity {
             webView.getSettings().setCacheMode( WebSettings.LOAD_CACHE_ELSE_NETWORK );
         }
 
-        webView.loadUrl("http://sushant.info.np");
+        webView.loadUrl("file:///android_asset/home.html");
 
-                                  }
+                                         }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -113,6 +113,13 @@ public class MainActivity extends AppCompatActivity {
         //public void onReceivedError(WebView view, int errorCode, String description, String failingUrl) {
             //webView.loadUrl("file:///assets/home.html");
 
+    }
+
+    @Override
+    protected void onResume(){
+        super.onResume();
+        webView.getSettings().setCacheMode(WebSettings.LOAD_DEFAULT);
+        webView.reload();
     }
 
 

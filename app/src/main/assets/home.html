@@ -1,24 +1,40 @@
 
+
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <style>
-        table {
-        border-collapse: collapse;
-        border: 2px black solid;
-        font: 12px sans-serif;
-        }
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 
-        td {
-        border: 1px black solid;
-        padding: 5px;
-        }
-    </style>
-</head>
-<body>
-<script src="http://d3js.org/d3.v3.min.js"></script>
+<!https://docs.google.com/spreadsheets/d/1mO7DiSyn3tG7Xe6SdtupsNiakYsO0uLX2pgW-JO3V1A/pub?output=csv
+//http://kalimatimarket.com.np/home/wpricelist  >
 
+
+<style>
+    h1 { color: #111; font-family: 'Helvetica Neue', sans-serif; font-size: 25px; font-weight: bold; letter-spacing: -1px; line-height: 1; text-align: right; }
+
+    table {
+    border-collapse: collapse;
+    border: 2px black solid;
+    font: 18px sans-serif;
+    width: 100%;
+
+
+
+    }
+
+    td {
+    border: 1px black solid;
+    padding: 5px;
+    }
+</style>
+
+<h1>
+    . . .  a watchdog for Nepali Market.
+</h1>
+<p style="color: blueviolet;"> Demo version! Being developed by: Sushant Gautam - www.sushant.info.np  . Not responsible for data and contents. Visit https://github.com/SushantGautam/NPbazzar/ for contributions. Keep updating the app . . .  </p>
+
+<script src="https://d3js.org/d3.v3.min.js"></script>
 
 <script type="text/javascript"charset="utf-8">
             d3.text("https://docs.google.com/spreadsheets/d/1mO7DiSyn3tG7Xe6SdtupsNiakYsO0uLX2pgW-JO3V1A/pub?output=csv", function(data) {
@@ -37,5 +53,8 @@
                         .text(function(d) { return d; });
             });
         </script>
+
+
 </body>
 </html>
+
