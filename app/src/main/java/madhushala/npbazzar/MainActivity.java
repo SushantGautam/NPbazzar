@@ -38,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
         //webView.loadUrl("file:///android_asset/home.html");
         //end of onCreateBundle
 
-        webView.getSettings().setAppCacheMaxSize(5 * 1024 * 1024); // 5MB
+        webView.getSettings().setAppCacheMaxSize(50 * 1024 * 1024); // 5MB
         webView.getSettings().setAppCachePath(getApplicationContext().getCacheDir().getAbsolutePath());
         webView.getSettings().setAllowFileAccess(true);
         webView.getSettings().setAppCacheEnabled(true);
@@ -63,11 +63,17 @@ public class MainActivity extends AppCompatActivity {
 
         if ( !isNetworkAvailable() ) { // loading offline
             webView.getSettings().setCacheMode( WebSettings.LOAD_CACHE_ELSE_NETWORK );
+            Toast.makeText(activity, "Turn on your internet connection for Latest Data", Toast.LENGTH_SHORT).show();
         }
+        else {
+            Toast.makeText(activity, "Updating Data. . . :)", Toast.LENGTH_SHORT).show();
+            webView.loadUrl("file:///android_asset/home.html");
+        }
+
 
         webView.loadUrl("file:///android_asset/home.html");
 
-                                         }
+                                  }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -113,13 +119,6 @@ public class MainActivity extends AppCompatActivity {
         //public void onReceivedError(WebView view, int errorCode, String description, String failingUrl) {
             //webView.loadUrl("file:///assets/home.html");
 
-    }
-
-    @Override
-    protected void onResume(){
-        super.onResume();
-        webView.getSettings().setCacheMode(WebSettings.LOAD_DEFAULT);
-        webView.reload();
     }
 
 
