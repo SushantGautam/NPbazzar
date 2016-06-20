@@ -66,8 +66,9 @@ public class MainActivity extends AppCompatActivity {
         });
         webView.setWebViewClient(new WebViewClient() {
             public void onReceivedError(WebView view, int errorCode, String description, String failingUrl) {
-                Toast.makeText(activity, "Oh no! " + description, Toast.LENGTH_SHORT).show();
-                //webView.loadUrl("file:///android_asset/home.html");
+                webView.loadUrl("file:///android_asset/index.html");
+                Toast.makeText(activity, "Bad! " + description, Toast.LENGTH_SHORT).show();
+
             }
         });
 
