@@ -1,8 +1,11 @@
 package madhushala.npbazzar;
 
 import android.app.Activity;
+import android.content.pm.ActivityInfo;
+import android.content.res.Configuration;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
 import android.support.design.widget.FloatingActionButton;
@@ -44,6 +47,13 @@ public class MainActivity extends AppCompatActivity {
         webView.getSettings().setAppCacheEnabled(true);
         webView.getSettings().setJavaScriptEnabled(true);
         webView.getSettings().setCacheMode(WebSettings.LOAD_DEFAULT); // load online by default
+        webView.getSettings().setRenderPriority(WebSettings.RenderPriority.HIGH);
+        if (Build.VERSION.SDK_INT >= 19) {
+            webView.setLayerType(View.LAYER_TYPE_HARDWARE, null);
+        }
+        else {
+            webView.setLayerType(View.LAYER_TYPE_SOFTWARE, null);
+        }
 
 
         final Activity activity = this;
@@ -67,11 +77,11 @@ public class MainActivity extends AppCompatActivity {
         }
         else {
             Toast.makeText(activity, "Updating Data. . . :)", Toast.LENGTH_SHORT).show();
-            webView.loadUrl("file:///android_asset/home.html");
+            webView.loadUrl("file:///android_asset/index.html");
         }
 
 
-        webView.loadUrl("file:///android_asset/home.html");
+        webView.loadUrl("file:///android_asset/index.html");
 
                                   }
 
@@ -121,6 +131,21 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    @Override
+public void onConfigurationChanged(Configuration newConfig) {
+    super.onConfigurationChanged(newConfig);
+    setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+}
+
+
+    @Override
+    public void onBackPressed() {
+        if (webView.canGoBack()) {
+            webView.goBack();
+        } else {
+            super.onBackPressed();
+        }
+    }
 
 
 }
