@@ -1,6 +1,9 @@
 package madhushala.npbazzar;
 
 import android.app.Activity;
+import android.content.BroadcastReceiver;
+import android.content.Context;
+import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.content.res.Configuration;
 import android.net.ConnectivityManager;
@@ -36,7 +39,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         webView = (WebView) findViewById(R.id.webview);
-        webView.setWebViewClient(new CustomWebViewClient());
+        //webView.setWebViewClient(new CustomWebViewClient());
+
         //webView.getSettings().setJavaScriptEnabled(true);
         //webView.loadUrl("file:///android_asset/home.html");
         //end of onCreateBundle
@@ -46,6 +50,7 @@ public class MainActivity extends AppCompatActivity {
         webView.getSettings().setAllowFileAccess(true);
         webView.getSettings().setAppCacheEnabled(true);
         webView.getSettings().setJavaScriptEnabled(true);
+        webView.setVerticalScrollBarEnabled(false);
         webView.getSettings().setCacheMode(WebSettings.LOAD_DEFAULT); // load online by default
         webView.getSettings().setRenderPriority(WebSettings.RenderPriority.HIGH);
         if (Build.VERSION.SDK_INT >= 19) {
@@ -57,20 +62,21 @@ public class MainActivity extends AppCompatActivity {
 
 
         final Activity activity = this;
-        webView.setWebChromeClient(new WebChromeClient() {
-            public void onProgressChanged(WebView view, int progress) {
-                // Activities and WebViews measure progress with different scales.
-                // The progress meter will automatically disappear when we reach 100%
-                activity.setProgress(progress * 1000);
-            }
-        });
-        webView.setWebViewClient(new WebViewClient() {
-            public void onReceivedError(WebView view, int errorCode, String description, String failingUrl) {
-                webView.loadUrl("file:///android_asset/index.html");
-                Toast.makeText(activity, "Bad! " + description, Toast.LENGTH_SHORT).show();
 
-            }
-        });
+//        webView.setWebChromeClient(new WebChromeClient() {
+//            public void onProgressChanged(WebView view, int progress) {
+//                // Activities and WebViews measure progress with different scales.
+//                // The progress meter will automatically disappear when we reach 100%
+//                activity.setProgress(progress * 1000);
+//            }
+//        });
+//        webView.setWebViewClient(new WebViewClient() {
+//            public void onReceivedError(WebView view, int errorCode, String description, String failingUrl) {
+//                webView.loadUrl("file:///android_asset/index.html");
+//                Toast.makeText(activity, "Bad! No internet. . " + description, Toast.LENGTH_SHORT).show();
+//
+//            }
+//        });
 
         if ( !isNetworkAvailable() ) { // loading offline
             webView.getSettings().setCacheMode( WebSettings.LOAD_CACHE_ELSE_NETWORK );
@@ -80,7 +86,6 @@ public class MainActivity extends AppCompatActivity {
             Toast.makeText(activity, "Updating Data. . . :)", Toast.LENGTH_SHORT).show();
             webView.loadUrl("file:///android_asset/index.html");
         }
-
 
         webView.loadUrl("file:///android_asset/index.html");
 
@@ -116,27 +121,23 @@ public class MainActivity extends AppCompatActivity {
     //implemeted from http://stackoverflow.com/questions/14670638/webview-load-website-when-online-load-local-file-when-offline
 
     //web view client implementation
-    private class CustomWebViewClient extends WebViewClient {
-        public boolean shouldOverrideUrlLoading(WebView view, String url)
-        {
+    //private class CustomWebViewClient extends WebViewClient {
+        //public boolean shouldOverrideUrlLoading(WebView view, String url)
+        //{
             //do whatever you want with the url that is clicked inside the webview.
             //for example tell the webview to load that url.
-            view.loadUrl(url);
+           // view.loadUrl(url);
             //return true if this method handled the link event
             //or false otherwise
-            return true;
-        }
+            //return true;
+      //  }
 
-        //public void onReceivedError(WebView view, int errorCode, String description, String failingUrl) {
-            //webView.loadUrl("file:///assets/home.html");
 
-    }
-
-    @Override
-public void onConfigurationChanged(Configuration newConfig) {
-    super.onConfigurationChanged(newConfig);
-    setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
-}
+//    @Override
+//public void onConfigurationChanged(Configuration newConfig) {
+//    super.onConfigurationChanged(newConfig);
+//    setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+//}
 
 
     @Override
