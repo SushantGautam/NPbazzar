@@ -200,7 +200,7 @@ section.success a.active {
 
 @media(max-width:767px) {
     section {
-        padding-top: 100px;
+        padding-top: 50px;
     }
 
     section.first {
