@@ -4,6 +4,11 @@
  * For details, see http://www.apache.org/licenses/LICENSE-2.0.
  */
 
+* {
+   -webkit-user-select: none;
+}
+
+
 body {
     overflow-x: hidden;
 }
