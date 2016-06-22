@@ -100,6 +100,7 @@
                 <a href="#portfolioModal1" class="portfolio-link" data-toggle="modal">
                     <div class="caption">
                         <div class="caption-content">
+                            <p> Latest Price</p>
                             <i class="fa fa-search-plus fa-3x"></i>
                         </div>
                     </div>
@@ -110,6 +111,7 @@
                 <a href="#portfolioModal2" class="portfolio-link" data-toggle="modal">
                     <div class="caption">
                         <div class="caption-content">
+                            <p> Trending Items</p>
                             <i class="fa fa-search-plus fa-3x"></i>
                         </div>
                     </div>
@@ -120,6 +122,7 @@
                 <a href="#portfolioModal3" class="portfolio-link" data-toggle="modal">
                     <div class="caption">
                         <div class="caption-content">
+                            <p>Super Saver</p>
                             <i class="fa fa-search-plus fa-3x"></i>
                         </div>
                     </div>
@@ -130,6 +133,7 @@
                 <a href="#portfolioModal4" class="portfolio-link" data-toggle="modal">
                     <div class="caption">
                         <div class="caption-content">
+                            <p> Health Tips </p>
                             <i class="fa fa-search-plus fa-3x"></i>
                         </div>
                     </div>
@@ -140,6 +144,7 @@
                 <a href="#portfolioModal5" class="portfolio-link" data-toggle="modal">
                     <div class="caption">
                         <div class="caption-content">
+                            <p>Contact US</p>
                             <i class="fa fa-search-plus fa-3x"></i>
                         </div>
                     </div>
@@ -150,6 +155,7 @@
                 <a href="#portfolioModal6" class="portfolio-link" data-toggle="modal">
                     <div class="caption">
                         <div class="caption-content">
+                            <p>About App</p>
                             <i class="fa fa-search-plus fa-3x"></i>
                         </div>
                     </div>
@@ -215,8 +221,8 @@
                         <h2>Trending Now</h2>
                         <hr class="star-primary">
                         <img src="img/portfolio/cake.png" class="img-responsive img-centered" alt="">
-                        <p>Displaying the trending prices of different items in the market.</p>
-                        <p>Keeping data here. .  with 146 icons for only $12!</p>
+                        <p>Displaying the prices of trending items in the market.</p>
+                      <div id='box2' class='box2'style="padding-botton: 10px;"> </div> <br>
                         <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
                     </div>
                 </div>
@@ -236,24 +242,11 @@
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2">
                     <div class="modal-body">
-                        <h2>Data Title</h2>
+                        <h2>Super Saver</h2>
                         <hr class="star-primary">
                         <img src="img/portfolio/circus.png" class="img-responsive img-centered" alt="">
-                        <p>Keeping data here. .  with 146 icons for only $12!</p>
-                        <ul class="list-inline item-details">
-                            <li>Client:
-                                <strong>
-                                </strong>
-                            </li>
-                            <li>Date:
-                                <strong
-                                </strong>
-                            </li>
-                            <li>Service:
-                                <strong>
-                                </strong>
-                            </li>
-                        </ul>
+                        <p>Displaying the prices of affordable items in the market.</p>
+													<div id='box3' class='box3'style="padding-botton: 10px;"> </div> <br>
                         <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
                     </div>
                 </div>
@@ -273,25 +266,12 @@
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2">
                     <div class="modal-body">
-                        <h2>Data Title</h2>
+                        <h2>Health Tips</h2>
                         <hr class="star-primary">
                         <img src="img/portfolio/game.png" class="img-responsive img-centered" alt="">
-                        <p>Keeping data here. .  with 146 icons for only $12!</p>
-                        <ul class="list-inline item-details">
-                            <li>Client:
-                                <strong>
-                                </strong>
-                            </li>
-                            <li>Date:
-                                <strong
-                                </strong>
-                            </li>
-                            <li>Service:
-                                <strong>
-                                </strong>
-                            </li>
-                        </ul>
-                        <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
+                        <p> Displaying health tips for a healthy life. Come back later to get more. </p>
+<div id='box4' class='box4'style="padding-botton: 10px;"> </div> <br>
+                         <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
                     </div>
                 </div>
             </div>
@@ -484,13 +464,13 @@
 <script src="https://d3js.org/d3.v3.min.js"></script>
 <script type="text/javascript"charset="utf-8">
             d3.text("https://docs.google.com/spreadsheets/d/1mO7DiSyn3tG7Xe6SdtupsNiakYsO0uLX2pgW-JO3V1A/pub?output=csv", function(data) {
-                var parsedCSV = d3.csv.parseRows(data);
+                var parsedCSV1 = d3.csv.parseRows(data);
 
-                var container = d3.selectAll(".box1")
+                var container1 = d3.selectAll(".box1")
                     .append("table")
 
                     .selectAll("tr")
-                        .data(parsedCSV).enter()
+                        .data(parsedCSV1).enter()
                         .append("tr")
 
                     .selectAll("td")
@@ -498,6 +478,56 @@
                         .append("td")
                         .text(function(d) { return d; });
             });
+
+            d3.text("https://docs.google.com/spreadsheets/d/1mO7DiSyn3tG7Xe6SdtupsNiakYsO0uLX2pgW-JO3V1A/pub?gid=1132229970&single=true&output=csv", function(data) {
+                var parsedCSV2 = d3.csv.parseRows(data);
+
+                var container2 = d3.selectAll(".box2")
+                    .append("table")
+
+                    .selectAll("tr")
+                        .data(parsedCSV2).enter()
+                        .append("tr")
+
+                    .selectAll("td")
+                        .data(function(d) { return d; }).enter()
+                        .append("td")
+                        .text(function(d) { return d; });
+            });
+
+            d3.text("https://docs.google.com/spreadsheets/d/1mO7DiSyn3tG7Xe6SdtupsNiakYsO0uLX2pgW-JO3V1A/pub?gid=856860495&single=true&output=csv", function(data) {
+                var parsedCSV3 = d3.csv.parseRows(data);
+
+                var container2 = d3.selectAll(".box3")
+                    .append("table")
+
+                    .selectAll("tr")
+                        .data(parsedCSV3).enter()
+                        .append("tr")
+
+                    .selectAll("td")
+                        .data(function(d) { return d; }).enter()
+                        .append("td")
+                        .text(function(d) { return d; });
+            });
+
+
+            d3.text("https://docs.google.com/spreadsheets/d/1mO7DiSyn3tG7Xe6SdtupsNiakYsO0uLX2pgW-JO3V1A/pub?gid=1542173244&single=true&output=csv", function(data) {
+                var parsedCSV3 = d3.csv.parseRows(data);
+
+                var container2 = d3.selectAll(".box4")
+                    .append("table")
+
+                    .selectAll("tr")
+                        .data(parsedCSV3).enter()
+                        .append("tr")
+
+                    .selectAll("td")
+                        .data(function(d) { return d; }).enter()
+                        .append("td")
+                        .text(function(d) { return d; });
+            });
+
         </script>
 
 
