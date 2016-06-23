@@ -149,6 +149,12 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    protected void onResume()
+    {
+        super.onResume();
+        webView.loadUrl("file:///android_asset/index.html");
+
+    }
 
 }
 
