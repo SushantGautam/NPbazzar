@@ -564,7 +564,6 @@ header .container {
 header img {
     display: block;
     margin: 0 auto 20px;
-    -webkit-filter: drop-shadow(5px 5px 5px #f7c34c);
 }
 
 header .intro-text .name {

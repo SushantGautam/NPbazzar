@@ -40,7 +40,7 @@
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header page-scroll">
 
-            <a class="navbar-brand" onclick="window.location.href=this" >NPbazzar</a>
+            <a class="navbar-brand" >NPbazzar</a>
         </div>
 
 
@@ -458,13 +458,10 @@
 <!-- Custom Theme JavaScript -->
 <script src="js/freelancer.js"></script>
 
+<script src="js/gajs.js"></script>
 
+<script src="js/d3.v3.min.js"></script>
 
-
-
-<! <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script> 
-
-<script src="https://d3js.org/d3.v3.min.js"></script>
 <script type="text/javascript"charset="utf-8">
             d3.text("https://docs.google.com/spreadsheets/d/1mO7DiSyn3tG7Xe6SdtupsNiakYsO0uLX2pgW-JO3V1A/pub?output=csv", function(data) {
                 var parsedCSV1 = d3.csv.parseRows(data);
@@ -548,6 +545,16 @@
     padding: 5px;
     }
 </style>
+
+
+
+<script>
+
+  gaTrack('UA-79524269-1', 'www.chhori.org/lab/table.html', '/js/gajs.js');
+
+</script>
+
+
 
 
 </body>

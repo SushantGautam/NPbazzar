@@ -1607,8 +1607,6 @@ img{
 	display: none;
 	opacity: 0;  }
 	-webkit-filter: drop-shadow(5px 5px 5px #222);
-	-webkit-filter: drop-shadow(5px 5px 5px #f7c34c);
-	filter: drop-shadow(5px 5px 5px #222);
 }
 
 .img-rounded{
