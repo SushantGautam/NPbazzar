@@ -53,6 +53,8 @@ public class MainActivity extends AppCompatActivity {
         webView.setVerticalScrollBarEnabled(false);
         webView.getSettings().setCacheMode(WebSettings.LOAD_DEFAULT); // load online by default
         webView.getSettings().setRenderPriority(WebSettings.RenderPriority.HIGH);
+        String useragente= "Mozilla/5.0 (Linux; U; Android 4.1.1; en-gb; Build/KLP) AppleWebKit/534.30 (KHTML, like Gecko) Version/4.0 Safari/534.30";
+        webView.getSettings().setUserAgentString(useragente);
         if (Build.VERSION.SDK_INT >= 19) {
             webView.setLayerType(View.LAYER_TYPE_HARDWARE, null);
         }
@@ -140,14 +142,21 @@ public class MainActivity extends AppCompatActivity {
 //}
 
 
+    private static long back_pressed;
+
     @Override
-    public void onBackPressed() {
-        if (webView.canGoBack()) {
-            webView.goBack();
-        } else {
-            super.onBackPressed();
+    public void onBackPressed()
+    {
+        if (back_pressed + 2000 > System.currentTimeMillis()) {
+                super.onBackPressed();
         }
-    }
+        else {
+            webView.loadUrl("file:///android_asset/index.html");
+            Toast.makeText(getBaseContext(), "Press once again to exit!", Toast.LENGTH_SHORT).show();
+        back_pressed = System.currentTimeMillis();
+    }}
+
+
 
     protected void onResume()
     {

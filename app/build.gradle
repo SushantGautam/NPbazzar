@@ -12,8 +12,8 @@ android {
         applicationId "madhushala.npbazzar"
         minSdkVersion 15
         targetSdkVersion 23
-        versionCode 4
-        versionName "1.2.1"
+        versionCode 8
+        versionName "1.2.5"
     }
     buildTypes {
         release {

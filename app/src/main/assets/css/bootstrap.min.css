@@ -1718,7 +1718,7 @@ h6,.h6{
 }
 
 p{
-	margin:0 0 10.5px
+	margin: 0 0 0px;
 }
 
 .lead{
@@ -1753,7 +1753,8 @@ mark,.mark{
 }
 
 .text-center{
-	text-align:center
+	text-align:center;
+	padding-top: 1vh;
 }
 
 .text-justify{
@@ -4848,10 +4849,12 @@ textarea.input-group-sm>.form-control,textarea.input-group-sm>.input-group-addon
 .navbar-brand{
 	float:left;
 	/* padding: 10px 20px;
-	 */font-size: 25px;
+	 */
+	font-size: 25px;
 	/* line-height:21px;
-	 */height: 0;
-	text-shadow: -10px 0 rgba(83, 152, 152, 0.4), 10px 0 rgba(181, 114, 181, 0.4);
+	 */
+	height: 0;
+	/* text-shadow: -10px 0 rgba(83, 152, 152, 0.4), 10px 0 rgba(181, 114, 181, 0.4); */
 	padding-top: 10px;
 	padding-right: 20px;
 	padding-bottom: 30px;

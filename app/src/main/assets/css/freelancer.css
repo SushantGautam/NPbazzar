@@ -92,18 +92,48 @@ header {
 
 header .container {
     padding-top: 50px;
-    padding-bottom: 50px;
+    /* padding-bottom: 50px; */
 }
 
 header img {
-    display: block;
+        display: block;
     margin: 0 auto 20px;
     -webkit-filter: drop-shadow(5px 5px 5px #f7c34c);
+    display: block;
+
+  animation-name: stretch;
+  animation-duration: 1s; 
+  animation-timing-function: ease-out; 
+  animation-delay: 0;
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+  animation-fill-mode: none;
+  animation-play-state: running;
+}
+
+@keyframes stretch {
+  0% {
+    transform: scale(1.0);
+    -webkit-filter: drop-shadow(5px 5px 5px #fff);
+  
+    
+ 
+  }
+  50% {
+/*     background-color: orange; */
+
+-webkit-filter: drop-shadow(5px 5px 5px red);
+  
+  }
+  100% {
+    transform: scale(1.1);
+/*     background-color: yellow; */
+  }
 }
 
 header .intro-text .name {
     display: block;
-    text-transform: uppercase;
+    /* text-transform: uppercase; */
     font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
     font-size: 2em;
     font-weight: 700;
@@ -154,7 +184,7 @@ header .intro-text .skills {
 }
 
 .navbar {
-    text-transform: uppercase;
+    /* text-transform: uppercase; */
     font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
     font-weight: 700;
 }
@@ -211,22 +241,22 @@ section.success a.active {
 
 #portfolio .portfolio-item {
     right: 0;
-    margin: 0 0 15px;
+    /* margin: 0 0 15px; */
 }
 
 #portfolio .portfolio-item .portfolio-link {
     display: block;
-    position: relative;
-    margin: 0 auto;
-    max-width: 400px;
+    /* position: relative; */
+    /* margin: 0 auto; */
+    /* max-width: 400px; */
 }
 
 #portfolio .portfolio-item .portfolio-link .caption {
     position: absolute;
-    width: 100%;
-    height: 100%;
+    /* width: 100%; */
+    /* height: 100%; */
     opacity: 0;
-    background: rgba(24,188,156,.9);
+    /* background: rgba(24,188,156,.9); */
     -webkit-transition: all ease .5s;
     -moz-transition: all ease .5s;
     transition: all ease .5s;
@@ -258,6 +288,8 @@ section.success a.active {
 
 #portfolio * {
     z-index: 2;
+    text-align: center;
+    /* padding-right: 15px; */
 }
 
 @media(min-width:767px) {
@@ -477,6 +509,7 @@ html {
 
 body {
     overflow-x: hidden;
+    height: 100%;
 }
 
 p {
@@ -493,7 +526,7 @@ a:focus,
 a:active,
 a.active {
     outline: 0;
-    color: #f7c34c;
+    color: #4c9af7;
 }
 
 h1,
@@ -505,6 +538,7 @@ h6 {
     text-transform: uppercase;
     font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
     font-weight: 700;
+    padding-top: 20px;
 }
 
 hr.star-light,
@@ -553,29 +587,33 @@ hr.star-primary:after {
 header {
     text-align: center;
     color: #fff;
-    background: #767cbf;
+    background: rgba(240, 89, 210, 0.78);
 }
 
 header .container {
     padding-top: 50px;
-    padding-bottom: 50px;
+    /* padding-bottom: 50px; */
+    /* height: 100vh; */
 }
 
 header img {
     display: block;
     margin: 0 auto 20px;
+    height: 40%;
+    padding-top: 20px;
 }
 
 header .intro-text .name {
     display: block;
-    text-transform: uppercase;
+    /* text-transform: uppercase; */
     font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
-    font-size: 2em;
+    font-size: 3em;
     font-weight: 700;
+    padding-top: 20px;
 }
 
 header .intro-text .skills {
-    font-size: 1.25em;
+    /* font-size: 2em; */
     font-weight: 300;
 }
 
@@ -619,7 +657,7 @@ header .intro-text .skills {
 }
 
 .navbar {
-    text-transform: uppercase;
+    /* text-transform: uppercase; */
     font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
     font-weight: 700;
 }
@@ -642,7 +680,9 @@ header .intro-text .skills {
 }
 
 section {
-    padding: 50px 0;
+    /* padding: 50px 0; */
+    padding-right: 15px;
+    padding-left: 15px;
 }
 
 section h2 {
@@ -667,7 +707,8 @@ section.success a.active {
 @media(max-width:767px) {
     section {
         padding-top: 50px;
-        background-color: beige;
+        background-color: #cae2f1;
+        padding-right: 15px;
     }
 
     section.first {
@@ -677,22 +718,24 @@ section.success a.active {
 
 #portfolio .portfolio-item {
     right: 0;
-    margin: 0 0 15px;
+    /* margin: 0 0 15px; */
+    float: right;
+    width: 50%;
 }
 
 #portfolio .portfolio-item .portfolio-link {
     display: block;
-    position: relative;
-    margin: 0 auto;
-    max-width: 400px;
+    /* position: relative; */
+    /* margin: 0 auto; */
+    /* max-width: 400px; */
 }
 
 #portfolio .portfolio-item .portfolio-link .caption {
     position: absolute;
-    width: 100%;
-    height: 100%;
-    opacity: 0;
-    background: rgba(24,188,156,.9);
+    width: 50%;
+    height: 50%;
+    /* opacity: initial; */
+    background: rgba(82, 91, 120, 0.9);
     -webkit-transition: all ease .5s;
     -moz-transition: all ease .5s;
     transition: all ease .5s;
@@ -724,6 +767,7 @@ section.success a.active {
 
 #portfolio * {
     z-index: 2;
+    /* width: 20vh; */
 }
 
 @media(min-width:767px) {
@@ -884,6 +928,7 @@ footer .footer-below {
 
 .portfolio-modal .modal-content img {
     margin-bottom: 30px;
+    display: none;
 }
 
 .portfolio-modal .modal-content .item-details {
@@ -928,5 +973,7 @@ footer .footer-below {
 .portfolio-modal .modal-backdrop {
     display: none;
     opacity: 0;
+
+
 }
 
